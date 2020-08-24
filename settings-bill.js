@@ -98,9 +98,10 @@ module.exports = function SettingsBill() {
             smsTotal,
             callTotal,
             grandTotal: grandTotal(),
+            colour: totalColourName()
 
         }
-    }
+    };
 
     function hasReachedWarningLevel() {
         const total = grandTotal();
@@ -117,11 +118,11 @@ module.exports = function SettingsBill() {
 
      //created a function for coloring my totals.
 function totalColourName() {
-    if (grandTotal() >= getCriticalLevel()) {
+    if ( hasReachedCriticalLevel()) {
         return "danger"
     }
 
-    if (grandTotal() >= getWarningLevel() ) {
+    if (hasReachedWarningLevel() ) {
         return "warning"
 
     }

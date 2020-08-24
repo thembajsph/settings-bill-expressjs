@@ -42,7 +42,8 @@ app.get("/", function (req, res) {
   // put it again the settingsbill data on screen , render it on second parameter:
   res.render("index", {
     settings: settingsBill.getSettings(),
-    totals: settingsBill.totals()
+    totals: settingsBill.totals(),
+    color: settingsBill.totalColourName()
   });
 
 });
