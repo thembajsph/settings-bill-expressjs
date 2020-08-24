@@ -1,0 +1,19 @@
+{
+  "name": "settings-bill-expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "thembajsph",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^8.1.1"
+  }
+}
