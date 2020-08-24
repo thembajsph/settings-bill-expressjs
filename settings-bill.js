@@ -3,7 +3,7 @@ module.exports = function SettingsBill() {
     let smsCost = 0;
     let callCost = 0;
     let warningLevel = 0;
-    let criticalLevel = 0;
+    let criticalLevel =0;
 
     let actionList = [];
 

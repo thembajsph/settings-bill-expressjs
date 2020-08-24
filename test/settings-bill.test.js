@@ -5,6 +5,13 @@ describe('settings-bill', function(){
     const settingsBill = SettingsBill();
 
     it('should be able to record calls', function(){
+        settingsBill.setSettings({
+            smsCost: 2.35,
+            callCost: 3.35,
+            warningLevel: 30,
+            criticalLevel: 40
+        });
+
         settingsBill.recordAction('call');
         assert.equal(1, settingsBill.actionsFor('call').length);
     });
