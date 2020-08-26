@@ -1,9 +1,9 @@
 module.exports = function SettingsBill() {
 
-    let smsCost = 0;
-    let callCost = 0;
-    let warningLevel = 0;
-    let criticalLevel =0;
+    let smsCost;
+    let callCost;
+    let warningLevel;
+    let criticalLevel;
 
     let actionList = [];
 
@@ -75,7 +75,7 @@ module.exports = function SettingsBill() {
                 total += action.cost;
             }
         }
-        return total;
+        return total
 
         // the short way using reduce and arrow functions
 
@@ -92,13 +92,17 @@ module.exports = function SettingsBill() {
     }
 
     function totals() {
-        let smsTotal = getTotal('sms')
-        let callTotal = getTotal('call')
+
+        let smsTotal = getTotal('sms').toFixed(2)
+        let callTotal = getTotal('call').toFixed(2)
+
+
+
         return {
             smsTotal,
             callTotal,
-            grandTotal: grandTotal(),
-            colour: totalColourName()
+            grandTotal: grandTotal().toFixed(2),
+            
 
         }
     };

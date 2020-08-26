@@ -6,9 +6,12 @@ const exphbs = require('express-handlebars');
 // //get body parser / instantiate
 const bodyParser = require('body-parser');
 
+var moment = require('moment'); // require
+moment().format()
 
 //require the settings bill factory function
 const SettingsBill = require("./settings-bill");
+
 
 // create an instance for the app, instantiate it.
 const app = express();
@@ -82,15 +85,29 @@ app.post("/action", function (req, res) {
 
 // another route, a get route, called Actions
 app.get("/actions", function (req, res) {
+
+
+// moments calling the function and creating a new variable then for of loop then render the variable created
+var actionLists =   settingsBill.actions()
+for(let key of actionLists){
+key.ago = moment(key.timestamp).fromNow()
+}
   // render new created template actions.handlebars, send something in (second parameter)
-  res.render("actions", {actions: settingsBill.actions() });
+res.render("actions", {actions: actionLists});
 
 });
 
 // another route a get, /actions/:type route , a dynamic to display calls and text
 app.get("/actions/:actionType", function (req, res) {
   const actionType = req.params.actionType;
-  res.render("actions", {actions: settingsBill.actions(actionType) });
+  var actionLists2 =   settingsBill.actions(actionType)  
+  
+for(let key of actionLists2){
+key.ago = moment(key.timestamp).fromNow()
+}
+
+ 
+  res.render("actions", {actions: actionLists2 });
  
 
 });

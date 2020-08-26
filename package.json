@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "heroku": "^7.42.8",
-    "mocha": "^8.1.1"
+    "mocha": "^8.1.1",
+    "moment": "^2.27.0"
   }
 }
